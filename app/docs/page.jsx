@@ -1,12 +1,24 @@
 "use client"
 
-import { useState } from "react"
+import { useState,useEffect } from "react"
 import { motion } from "framer-motion"
 import { ChevronRight, Menu, X } from "lucide-react"
 
 export default function DocsPage() {
   const [selectedTopic, setSelectedTopic] = useState("variables")
   const [sidebarOpen, setSidebarOpen] = useState(false)
+  const [windowWidth, setWindowWidth] = useState(1024);
+
+useEffect(() => {
+  if (typeof window !== "undefined") {
+    setWindowWidth(window.innerWidth);
+
+    const handleResize = () => setWindowWidth(window.innerWidth);
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }
+}, []);
+
 
  const topics = [
   {
@@ -115,7 +127,8 @@ end
       {/* Sidebar */}
       <motion.div
         initial={{ x: -300 }}
-        animate={{ x: sidebarOpen || window.innerWidth >= 1024 ? 0 : -300 }}
+        animate={{ x: sidebarOpen || windowWidth >= 1024 ? 0 : -300 }}
+
         transition={{ duration: 0.3 }}
         className="fixed lg:sticky top-16 left-0 h-screen w-80 bg-gray-800 border-r border-gray-700 overflow-y-auto z-40"
       >
