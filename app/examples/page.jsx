@@ -13,57 +13,56 @@ export default function ExamplesPage() {
       id: 1,
       title: "Hello World",
       description: "A simple greeting program",
-      code: `let name = "World";
-print("Hello, " + name + "!");`,
-      output: "Hello, World!",
+      code: `let a be "Hello World"
+say a`,
+      output: "Hello World",
     },
     {
       id: 2,
-      title: "For Loop Counter",
-      description: "Counting from 1 to 5",
-      code: `for (let i = 1; i <= 5; i++) {
-    print("Count: " + i);
-}`,
-      output: "Count: 1\nCount: 2\nCount: 3\nCount: 4\nCount: 5",
+      title: "while Loop Counter",
+      description: "Counting from 10 to 20",
+      code: `let a be 10
+repeat while a<=20
+    say "count: ",a
+    set a to a + 1
+end`,
+      output: "Count: 10\nCount: 11\nCount: 12\nCount: 13\nCount: 14\nCount: 15\nCount: 16\nCount: 17\nCount: 18\nCount: 19\nCount: 20",
     },
     {
       id: 3,
       title: "Factorial Function",
-      description: "Calculate factorial recursively",
-      code: `function factorial(n) {
-    if (n <= 1) {
-        return 1;
-    }
-    return n * factorial(n - 1);
-}
+      description: "Calculate factorial",
+      code: `define function factorial(n)
+  let result be 1
+  let i be 1
 
-let result = factorial(5);
-print("5! = " + result);`,
+  repeat while i<=n
+    set result to result*i
+    set i to i+1
+  end
+
+  return result
+end
+
+let answer be call factorial(5)
+say "5! = ",answer`,
       output: "5! = 120",
     },
     {
       id: 4,
       title: "Conditional Logic",
-      description: "Grade calculator with conditions",
-      code: `let score = 87;
-let grade;
-
-if (score >= 90) {
-    grade = "A";
-} else if (score >= 80) {
-    grade = "B";
-} else if (score >= 70) {
-    grade = "C";
-} else {
-    grade = "F";
-}
-
-print("Score: " + score + ", Grade: " + grade);`,
-      output: "Score: 87, Grade: B",
+      description: "Conditions applied to a variable value check",
+      code: `let age be 11
+when age>=18 then
+    say "u can vote"
+otherwise
+    say "u cant vote"
+end`,
+      output: "Equal to 10",
     },
   ]
 
-  const phases = ["Lexical", "Syntax", "Semantic", "Output"]
+  const phases = ["Lexical", "Syntax", "Semantic","Target Code","Output"]
 
   const runExample = async (exampleId) => {
     setRunningExample(exampleId)
