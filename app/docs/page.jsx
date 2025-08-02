@@ -8,147 +8,97 @@ export default function DocsPage() {
   const [selectedTopic, setSelectedTopic] = useState("variables")
   const [sidebarOpen, setSidebarOpen] = useState(false)
 
-  const topics = [
-    {
-      id: "variables",
-      title: "Variables",
-      content: `// Variable Declaration in NovaScript
-let name = "John";
-let age = 25;
-let isStudent = true;
+ const topics = [
+  {
+    id: "variables",
+    title: "Variables",
+    content: `# Variable Declaration in NovaScript
+let name be "John"
+let age be 25
+let isStudent be true
 
-// Variable Types
-let number = 42;        // Integer
-let decimal = 3.14;     // Float
-let text = "Hello";     // String
-let flag = false;       // Boolean
+# Variable Assignment
+set a as 20
+set b as "hello"
+`,
+  },
+  {
+    id: "loops",
+    title: "Loops",
+    content: `
+# While Loop
+let count be 0
+repeat while count < 3
+  say count
+  set count as count + 1
+end
 
-// Variable Assignment
-age = 26;               // Update existing variable
-let newAge = age + 1;   // Create new variable from existing`,
-    },
-    {
-      id: "loops",
-      title: "Loops",
-      content: `// For Loop
-for (let i = 0; i < 5; i++) {
-    print("Iteration: " + i);
-}
+#for loop
+repeat for i from 1 to 5
+    say i
+end
 
-// While Loop
-let count = 0;
-while (count < 3) {
-    print("Count: " + count);
-    count = count + 1;
-}
+  `,
+  },
+  {
+    id: "conditionals",
+    title: "Conditionals",
+    content: `
+    let age be 18
+    when age>=18 then
+      say "You're allowed to vote"
+    otherwise
+      say "You're not allowed to vote"
+    end
+  `,
+  },
+  {
+    id: "functions",
+    title: "Functions",
+    content: `
+    define function add(a,b)
+      say a+b
+    end
 
-// Nested Loops
-for (let i = 1; i <= 3; i++) {
-    for (let j = 1; j <= 3; j++) {
-        print(i + " x " + j + " = " + (i * j));
-    }
-}`,
-    },
-    {
-      id: "conditionals",
-      title: "Conditionals",
-      content: `// If Statement
-let score = 85;
-if (score >= 90) {
-    print("Grade: A");
-} else if (score >= 80) {
-    print("Grade: B");
-} else if (score >= 70) {
-    print("Grade: C");
-} else {
-    print("Grade: F");
-}
+    define function mySay(a)
+      let i be 0
+      repeat while i<a
+        say i
+        set i to i+1
+      end
+    
+    call mySay(5)
+    
+    `,
+  },
+  {
+    id: "errors",
+    title: "Error Handling",
+    content: `
+    try
+      let num be 0
+      let result be 100/0
+      say result
+    catch error
+      say "An error occured"
+      say error
+    `,
+  },
+  {
+    id: "limitations",
+    title: "Limitations",
+    content: `# NovaScript Limitations
 
-// Logical Operators
-let age = 20;
-let hasLicense = true;
-
-if (age >= 18 && hasLicense) {
-    print("Can drive");
-} else {
-    print("Cannot drive");
-}`,
-    },
-    {
-      id: "functions",
-      title: "Functions",
-      content: `// Function Declaration
-function greet(name) {
-    return "Hello, " + name + "!";
-}
-
-// Function Call
-let message = greet("Alice");
-print(message);
-
-// Function with Multiple Parameters
-function add(a, b) {
-    return a + b;
-}
-
-let sum = add(5, 3);
-print("Sum: " + sum);
-
-// Recursive Function
-function factorial(n) {
-    if (n <= 1) {
-        return 1;
-    }
-    return n * factorial(n - 1);
-}`,
-    },
-    {
-      id: "errors",
-      title: "Error Handling",
-      content: `// Common Syntax Errors
-// Missing semicolon
-let x = 5  // Error: Expected ';'
-
-// Undefined variable
-print(undefinedVar);  // Error: Variable not declared
-
-// Type mismatch
-let result = "hello" + 5;  // Warning: Implicit conversion
-
-// Function errors
-function test() {
-    return x;  // Error: 'x' not defined in scope
-}
-
-// Division by zero
-let result = 10 / 0;  // Runtime error`,
-    },
-    {
-      id: "limitations",
-      title: "Limitations",
-      content: `// Current Limitations of NovaScript
-
-// 1. No Arrays or Objects
-// Arrays and complex data structures are not yet supported
-
-// 2. Limited Standard Library
-// Only basic print() function is available
-
-// 3. No File I/O
-// Cannot read from or write to files
-
-// 4. Simple Type System
-// Only supports: int, float, string, boolean
-
-// 5. No Classes or Objects
-// Object-oriented programming not supported
-
-// 6. No Modules or Imports
-// All code must be in a single file
-
-// Future versions will address these limitations!`,
-    },
-  ]
+# 1. No support for complex data structures like arrays or objects
+# 2. Minimal standard library
+# 3. No file I/O operations
+# 4. Basic type system: integer, float, string, boolean
+# 5. No classes or OOP
+# 6. No modules or import system yet
+# 7. No handling of recursive functions
+`,
+  },
+]
 
   const currentTopic = topics.find((topic) => topic.id === selectedTopic)
 

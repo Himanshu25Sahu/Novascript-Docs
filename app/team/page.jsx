@@ -5,28 +5,28 @@ import { Github, Linkedin, Mail, Code, Palette } from "lucide-react"
 
 export default function TeamPage() {
   const team = [
-    {
-      id: 1,
-      name: "Alex Chen",
-      role: "Language Designer & Compiler Engineer",
-      bio: "Passionate about programming languages and compiler design. Led the development of NovaScript's core compiler in C++ and designed the language syntax.",
-      image: "/placeholder.svg?height=300&width=300",
-      skills: ["C++", "Compiler Design", "Language Theory", "Algorithm Design"],
-      github: "https://github.com/alexchen",
-      linkedin: "https://linkedin.com/in/alexchen",
-      email: "alex@novascript.dev",
-      icon: Code,
-    },
+{
+    id: 1,
+    name: "Himanshu Sahu",
+    role: "Language Designer & Full-Stack Developer",
+    bio: "Software developer skilled in C++, React, and Node.js. Designed NovaScript’s syntax and built its compiler core. Passionate about language design, systems programming, and building real-world applications.",
+    avatar: "/himanshu.jpeg?height=300&width=300", // Replace with actual image path if available
+    skills: ["C++", "React.js", "Node.js", "Next.js", "Typescript"],
+    github: "https://github.com/Himanshu25Sahu",
+    linkedin: "https://www.linkedin.com/in/himanshu-sahu-303b2b25a/",
+    email: "himpreetak@gmail.com",
+    icon: Code,
+  },
     {
       id: 2,
-      name: "Sarah Rodriguez",
-      role: "Frontend Developer & UX Designer",
-      bio: "Specializes in creating intuitive user experiences and interactive visualizations. Built the web interface and designed the compiler phase animations.",
-      image: "/placeholder.svg?height=300&width=300",
-      skills: ["JavaScript", "React", "UI/UX Design", "Data Visualization"],
-      github: "https://github.com/sarahrodriguez",
-      linkedin: "https://linkedin.com/in/sarahrodriguez",
-      email: "sarah@novascript.dev",
+      name: "JM Mushraf",
+      role: "Language Designer & Full-Stack Developer",
+      bio: "Passionate about building full-stack applications, from front-end interfaces to back-end services. Skilled in creating user-friendly designs and handling server-side logic with technologies like MongoDB, Express, React, and Node.js.",
+      avatar: "/mushraf.jpeg?height=300&width=300",
+      skills: ["C++", "React.js", "Node.js", "Next.js", "Typescript"],
+      github: "https://github.com/JM-Mushraf",
+      linkedin: "https://www.linkedin.com/in/mushraf-jm-386564306/",
+      email: "mushraf1786@gmail.com",
       icon: Palette,
     },
   ]
@@ -45,7 +45,7 @@ export default function TeamPage() {
             Meet the Creators
           </h1>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            The passionate developers behind NovaScript's innovative approach to teaching compiler concepts
+            The team behind NovaScript built it as a fun and practical project to explore language design and interpreter development.
           </p>
         </motion.div>
 
@@ -63,7 +63,7 @@ export default function TeamPage() {
               <div className="relative h-80 bg-gradient-to-br from-blue-600/20 to-purple-600/20 flex items-center justify-center">
                 <div className="absolute inset-0 bg-gradient-to-br from-blue-600/10 to-purple-600/10"></div>
                 <div className="relative z-10 w-48 h-48 bg-gray-700 rounded-full flex items-center justify-center border-4 border-gray-600 group-hover:border-blue-500 transition-colors">
-                  <member.icon className="w-24 h-24 text-gray-400 group-hover:text-blue-400 transition-colors" />
+                  <img src={member.avatar} className="w-full h-full object-cover rounded-full" ></img>
                 </div>
                 {/* Floating Elements */}
                 <div className="absolute top-4 right-4 w-12 h-12 bg-blue-500/20 rounded-full animate-pulse"></div>
@@ -127,36 +127,7 @@ export default function TeamPage() {
         </div>
 
         {/* Call to Action */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.6 }}
-          className="mt-16 bg-gradient-to-r from-blue-900/20 to-purple-900/20 border border-gray-700 rounded-lg p-8 text-center"
-        >
-          <h3 className="text-2xl font-semibold text-white mb-4">Want to Contribute?</h3>
-          <p className="text-gray-300 mb-6 max-w-2xl mx-auto">
-            NovaScript is an open-source project. We welcome contributions from developers, educators, and anyone
-            passionate about making compiler concepts more accessible.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a
-              href="https://github.com/novascript/novascript"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center space-x-2 bg-gray-700 hover:bg-gray-600 text-white px-6 py-3 rounded-lg font-semibold transition-colors"
-            >
-              <Github className="w-5 h-5" />
-              <span>View on GitHub</span>
-            </a>
-            <a
-              href="mailto:team@novascript.dev"
-              className="inline-flex items-center space-x-2 bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-semibold transition-colors"
-            >
-              <Mail className="w-5 h-5" />
-              <span>Get in Touch</span>
-            </a>
-          </div>
-        </motion.div>
+
       </div>
     </div>
   )

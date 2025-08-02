@@ -8,76 +8,64 @@ export default function PhasesPage() {
   const [currentPhase, setCurrentPhase] = useState(0)
   const [isRunning, setIsRunning] = useState(false)
 
-  const sampleCode = `for (let i = 0; i < 3; i++) {
-    print("Hello " + i);
-}`
+  const sampleCode = `
+let a be 10
+repeat while a>0
+  say a
+  set a to a-1
+end
+  `
 
   const phases = [
-    {
-      name: "Lexical Analysis",
-      description: "Breaking code into tokens (keywords, identifiers, operators, literals)",
-      tokens: [
-        "for",
-        "(",
-        "let",
-        "i",
-        "=",
-        "0",
-        ";",
-        "i",
-        "<",
-        "3",
-        ";",
-        "i",
-        "++",
-        ")",
-        "{",
-        "print",
-        "(",
-        '"Hello "',
-        "+",
-        "i",
-        ")",
-        ";",
-        "}",
-      ],
-      color: "blue",
+  {
+    name: "Lexical Analysis",
+    description: "Breaking code into tokens (keywords, identifiers, operators, literals)",
+    tokens: [
+      "let", "a", "be", "10",
+      "repeat", "while", "a", ">", "0",
+      "say", "a",
+      "set", "a", "to", "a", "-", "1",
+      "end"
+    ],
+    color: "blue",
+  },
+  {
+    name: "Syntax Analysis",
+    description: "Building an Abstract Syntax Tree (AST) from tokens",
+    tree: {
+      name: "RepeatWhile",
+      children: [
+        { name: "Condition: a > 0" },
+        {
+          name: "Body",
+          children: [
+            { name: "say a" },
+            { name: "set a to a - 1" }
+          ]
+        }
+      ]
     },
-    {
-      name: "Syntax Analysis",
-      description: "Building an Abstract Syntax Tree (AST) from tokens",
-      tree: {
-        name: "ForLoop",
-        children: [
-          { name: "Init: let i = 0" },
-          { name: "Condition: i < 3" },
-          { name: "Update: i++" },
-          {
-            name: "Body",
-            children: [{ name: "FunctionCall: print", children: [{ name: "Concat: 'Hello ' + i" }] }],
-          },
-        ],
-      },
-      color: "green",
-    },
-    {
-      name: "Semantic Analysis",
-      description: "Type checking and scope validation",
-      checks: [
-        { check: "Variable 'i' declared", status: "✓" },
-        { check: "Type compatibility: int < int", status: "✓" },
-        { check: "Function 'print' exists", status: "✓" },
-        { check: "String concatenation valid", status: "✓" },
-      ],
-      color: "yellow",
-    },
-    {
-      name: "Code Execution",
-      description: "Running the interpreted code",
-      output: ["Hello 0", "Hello 1", "Hello 2"],
-      color: "purple",
-    },
-  ]
+    color: "green",
+  },
+  {
+    name: "Semantic Analysis",
+    description: "Type checking and scope validation",
+    checks: [
+      { check: "Variable 'a' declared", status: "✓" },
+      { check: "Type of 'a' is integer", status: "✓" },
+      { check: "'a > 0' is valid boolean condition", status: "✓" },
+      { check: "'say' can output integer", status: "✓" }
+    ],
+    color: "yellow",
+  },
+  {
+    name: "Code Execution",
+    description: "Running the interpreted code",
+    output: ["10", "9", "8", "7", "6", "5", "4", "3", "2", "1"],
+    color: "purple",
+  }
+]
+
 
   const runPhases = async () => {
     setIsRunning(true)

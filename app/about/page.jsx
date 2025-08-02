@@ -7,23 +7,23 @@ export default function AboutPage() {
   const features = [
     {
       icon: Code,
-      title: "Simple Syntax",
-      description: "Clean, beginner-friendly syntax that's easy to learn and understand.",
+      title: "Project-Based Learning",
+      description: "Created as a hands-on project to explore language design and compiler basics.",
     },
     {
       icon: Cpu,
-      title: "Compiler Visualization",
-      description: "See exactly how your code gets processed through each compilation phase.",
+      title: "Custom Language Design",
+      description: "A fun and challenging way to apply concepts like lexing, parsing, and execution in C++.",
     },
     {
       icon: Zap,
-      title: "Interactive Learning",
-      description: "Run code examples and watch the compilation process in real-time.",
+      title: "Showcase of Skills",
+      description: "Demonstrates proficiency in C++, OOP, and building interpreters from scratch.",
     },
     {
       icon: Users,
-      title: "Educational Focus",
-      description: "Designed specifically for teaching compiler concepts to beginners.",
+      title: "Simplified Programming",
+      description: "Designed to make coding feel more natural and beginner-friendly with English-like syntax.",
     },
   ]
 
@@ -55,18 +55,13 @@ export default function AboutPage() {
             <h2 className="text-3xl font-bold mb-6 text-white">What is NovaScript?</h2>
             <div className="space-y-4 text-gray-300 text-lg leading-relaxed">
               <p>
-                NovaScript is an educational programming language designed to demystify the compilation process. Built
-                with C++ for the core compiler and enhanced with JavaScript for interactive visualization, it provides a
-                unique learning experience.
+                NovaScript is an English-like programming language designed for beginners and fast prototyping. With a focus on clarity and readability, it uses natural language syntax to make programming intuitive and easy to understand
               </p>
               <p>
-                Unlike traditional compiler courses that focus on theory, NovaScript lets you see, touch, and interact
-                with every phase of compilation. From lexical analysis to code generation, every step is visualized and
-                explained.
+                NovaScript supports key programming concepts like variables, functions, loops, conditionals, lists, error handling, and more — all expressed in a clean, human-friendly format.
               </p>
               <p>
-                Whether you're a computer science student, a curious developer, or an educator looking for better
-                teaching tools, NovaScript makes compiler concepts accessible and engaging.
+                It’s perfect for those new to coding or anyone who wants to quickly bring ideas to life. Learn more from this <a href="https://www.linkedin.com/posts/himanshu-sahu-303b2b25a_compilerdesign-recursivedescent-semanticanalysis-activity-7339534452844281857-j3aD?utm_source=share&utm_medium=member_desktop&rcm=ACoAAD_iEfMBHxjAi1obHV3wWlh6fSqaqagPUbY" className="text-blue-600">LinkedIn Post</a>.
               </p>
             </div>
           </motion.div>
@@ -77,23 +72,23 @@ export default function AboutPage() {
             transition={{ duration: 0.8, delay: 0.4 }}
             className="bg-gray-800 rounded-lg p-6 border border-gray-700"
           >
-            <h3 className="text-xl font-semibold mb-4 text-blue-400">Tech Stack</h3>
+            <h3 className="text-xl font-semibold mb-4 text-blue-400">Technologies</h3>
             <div className="space-y-3">
               <div className="flex items-center space-x-3">
                 <div className="w-3 h-3 bg-blue-500 rounded-full"></div>
-                <span className="text-gray-300">C++ - Core compiler implementation</span>
+                <span className="text-gray-300">C++ - Core Interpreter implementation</span>
               </div>
               <div className="flex items-center space-x-3">
                 <div className="w-3 h-3 bg-yellow-500 rounded-full"></div>
-                <span className="text-gray-300">JavaScript - Interactive simulation</span>
+                <span className="text-gray-300">OOP - For modular design</span>
               </div>
               <div className="flex items-center space-x-3">
                 <div className="w-3 h-3 bg-cyan-500 rounded-full"></div>
-                <span className="text-gray-300">Tailwind CSS - Modern styling</span>
+                <span className="text-gray-300">Custom Lexer and Parser</span>
               </div>
               <div className="flex items-center space-x-3">
                 <div className="w-3 h-3 bg-purple-500 rounded-full"></div>
-                <span className="text-gray-300">Next.js - Web framework</span>
+                <span className="text-gray-300">Error handling</span>
               </div>
             </div>
           </motion.div>
@@ -105,7 +100,7 @@ export default function AboutPage() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.6 }}
         >
-          <h2 className="text-3xl font-bold text-center mb-12 text-white">Why Choose NovaScript?</h2>
+          <h2 className="text-3xl font-bold text-center mb-12 text-white">Why We Built NovaScript?</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {features.map((feature, index) => (
               <motion.div
