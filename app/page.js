@@ -44,7 +44,7 @@ export default function HomePage() {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="text-xl md:text-2xl text-gray-300 mb-4 font-light"
           >
-            A Beginner-Friendly Language to Learn How Compilers Work
+            Novascript – A Custom Interpreted Language Built from Scratch
           </motion.p>
 
           <motion.p
@@ -53,7 +53,7 @@ export default function HomePage() {
             transition={{ duration: 0.8, delay: 0.4 }}
             className="text-lg md:text-xl text-gray-400 mb-12 font-light"
           >
-            Built in C++, simulated in JavaScript. Visualize every compiler phase.
+            Built in C++, simulated in JavaScript. Visualize every Interpreter phase.
           </motion.p>
 
           {/* CTA Buttons */}
