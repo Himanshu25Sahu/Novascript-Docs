@@ -1,0 +1,14 @@
+# Exception handling in NovaScript.
+# The interpreter raises "Division by zero" at runtime and the
+# catch block binds it to a string variable named `error`.
+
+try
+    let number be 0
+
+    let result be 100 / number
+    say result
+
+catch error
+    say "An error occurred: "
+    say error
+end

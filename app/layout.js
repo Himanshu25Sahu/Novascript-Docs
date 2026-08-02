@@ -5,8 +5,9 @@ import Navbar from "@/components/Navbar"
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata = {
-  title: "NovaScript - Learn How Compilers Work",
-  description: "A beginner-friendly language built in C++, simulated in JavaScript. Visualize every compiler phase.",
+  title: "NovaScript — A programming language and interpreter written in C++",
+  description:
+    "An indentation-sensitive language with a hand-written lexer, recursive-descent parser, scoped symbol table and tree-walking interpreter. Inspect the real token stream, AST and output of every example.",
 }
 
 export default function RootLayout({ children }) {

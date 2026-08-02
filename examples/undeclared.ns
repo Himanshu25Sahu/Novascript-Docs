@@ -1,0 +1,7 @@
+# This program is REJECTED on purpose.
+# The parser consults the symbol table while it builds the AST,
+# so an unknown name is caught before parsing even finishes.
+
+let subtotal be 42
+
+say total

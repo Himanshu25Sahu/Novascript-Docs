@@ -1,0 +1,19 @@
+/*
+Fibonacci sequence in NovaScript
+*/
+
+define function Fibonacci(n)
+    let a be 0
+    let b be 1
+    let c be 0
+
+    repeat while c<n
+        say a
+        let temp be b
+        set b to a+b
+        set a to temp
+        set c to c+1
+    end
+end
+
+call Fibonacci(10)

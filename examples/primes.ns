@@ -1,0 +1,24 @@
+# Print every prime number below 20.
+# NovaScript has no modulo operator, so divisibility is
+# tested with truncating integer division: (n/d)*d == n
+
+define function isPrime(n)
+    let d be 2
+    let prime be 1
+
+    repeat while d*d<=n
+        when (n/d)*d==n then
+            set prime to 0
+        end
+        set d to d+1
+    end
+
+    return prime
+end
+
+repeat for k from 2 to 20
+    let p be call isPrime(k)
+    when p==1 then
+        say k
+    end
+end

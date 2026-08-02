@@ -1,0 +1,17 @@
+# Implementing a Factorial Using NovaScript
+
+define function factorial(n)
+    let result be 1
+    let i be 1
+
+    repeat while i<=n
+        set result to result*i
+        set i to i+1
+    end
+
+    return result
+
+end
+
+let answer be call factorial(5)
+say answer

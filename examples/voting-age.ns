@@ -1,0 +1,9 @@
+# Branching with when / otherwise.
+
+let age be 20
+
+when age>=18 then
+    say "You can vote"
+otherwise
+    say "You cannot vote"
+end

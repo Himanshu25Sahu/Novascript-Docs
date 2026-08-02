@@ -1,0 +1,8 @@
+# Nested for-loops: the 3x3 multiplication table.
+# Each loop opens its own scope in the symbol table.
+
+repeat for i from 1 to 3
+    repeat for j from 1 to 3
+        say i*j
+    end
+end

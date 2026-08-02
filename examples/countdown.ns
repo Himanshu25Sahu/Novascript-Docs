@@ -1,0 +1,7 @@
+# A for-loop that walks backwards using a negative step.
+
+repeat for i from 10 to 1 step -1
+    say i
+end
+
+say 0
