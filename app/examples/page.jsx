@@ -19,6 +19,7 @@ const SUPPORT = [
       "+  -  *  /  truncating integer division",
       "==  !=  <  <=  >  >=",
       "when / otherwise",
+      "match / case dispatch",
       "repeat while",
       "repeat for i from a to b step c",
       "define function / call / return",
@@ -32,7 +33,6 @@ const SUPPORT = [
     tone: "text-amber-300",
     ring: "border-amber-700/40",
     items: [
-      "match / case dispatch",
       "repeat with i starting at a until b",
       "List and dictionary literals",
       "Index reads and index assignment",

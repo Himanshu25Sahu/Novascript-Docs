@@ -1,0 +1,18 @@
+# Pattern matching in NovaScript.
+# `match` evaluates its subject once, then runs the body of the first
+# case whose pattern is equal to it. Each case body gets its own scope.
+
+let day be 3
+
+match day
+    case 1 then
+        say "Monday"
+    case 2 then
+        say "Tuesday"
+    case 3 then
+        say "Wednesday"
+    case 4 then
+        say "Thursday"
+    case 5 then
+        say "Friday"
+end

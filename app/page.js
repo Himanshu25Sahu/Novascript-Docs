@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion"
 import Link from "next/link"
-import { ArrowRight, Github, BookOpen, Layers } from "lucide-react"
+import { ArrowRight, Github, BookOpen, Layers, Play } from "lucide-react"
 
 import PipelineExplorer from "@/components/PipelineExplorer"
 import data from "@/app/data/examples.json"
@@ -62,11 +62,18 @@ export default function HomePage() {
               className="mt-7 flex flex-wrap gap-3"
             >
               <Link
+                href="/playground"
+                className="glow-button group flex items-center gap-2 rounded-lg border border-amber-400/60 bg-amber-500/15 px-5 py-3 text-sm font-semibold text-amber-200 shadow-[0_0_20px_-4px_rgba(251,191,36,0.5)] transition-all hover:border-amber-300 hover:bg-amber-400/25 hover:text-amber-100"
+              >
+                <Play className="h-4 w-4" />
+                Run it in your browser
+                <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
+              </Link>
+              <Link
                 href="/examples"
-                className="glow-button group flex items-center gap-2 rounded-lg bg-blue-600 px-5 py-3 text-sm font-semibold text-white transition-colors hover:bg-blue-700"
+                className="glow-button flex items-center gap-2 rounded-lg border border-gray-700 bg-gray-800 px-5 py-3 text-sm font-semibold text-white transition-colors hover:bg-gray-700"
               >
                 All {examples.length} examples
-                <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
               </Link>
               <Link
                 href="/phases"

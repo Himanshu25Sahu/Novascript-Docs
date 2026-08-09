@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-08-02T13:50:00.851Z",
+  "generatedAt": "2026-08-09T06:36:48.362Z",
   "interpreter": {
     "path": "d:/Novascript 2.0/Novascript-700cfb0ad06b321dc42adcb97f929084a40279cb/src/main.exe",
-    "builtAt": "2026-08-02T13:23:50.931Z"
+    "builtAt": "2026-08-09T06:36:47.188Z"
   },
   "stats": {
-    "linesOfCpp": 3066,
-    "cppFiles": 17,
+    "linesOfCpp": 3246,
+    "cppFiles": 20,
     "tokenTypes": 68,
     "astNodeTypes": 24,
     "astNodeNames": [
@@ -1797,6 +1797,291 @@
         }
       ],
       "rawStdout": "Tokens (20 total):\nToken: let                  (LET) at line 3\nToken: age                  (IDENTIFIER) at line 3\nToken: be                   (BE) at line 3\nToken: 20                   (NUMBER) at line 3\nToken: when                 (WHEN) at line 5\nToken: age                  (IDENTIFIER) at line 5\nToken: >=                   (GREATER_EQUAL) at line 5\nToken: 18                   (NUMBER) at line 5\nToken: then                 (THEN) at line 5\nToken: <indent>             (INDENT) at line 6\nToken: say                  (SAY) at line 6\nToken: You can vote         (STRING) at line 6\nToken: <dedent>             (DEDENT) at line 7\nToken: otherwise            (OTHERWISE) at line 7\nToken: <indent>             (INDENT) at line 8\nToken: say                  (SAY) at line 8\nToken: You cannot vote      (STRING) at line 8\nToken: <dedent>             (DEDENT) at line 9\nToken: end                  (END) at line 9\nToken: ''                   (END_OF_FILE) at line 9\n\nParsing successful!\nParsed 20 tokens into 2 statements.\n\nAbstract Syntax Tree (AST):\nProgram with 2 statements:\n  VarDeclStmt: age (Type: INTEGER)\n    Init:\n      LiteralExpr: 20 (NUMBER)\n  WhenStmt:\n    Branch 1:\n      Condition:\n        BinaryExpr: >= (GREATER_EQUAL)\n          VariableExpr: age\n          LiteralExpr: 18 (NUMBER)\n      Body:\n        SayStmt:\n          LiteralExpr: You can vote (STRING)\n    Branch 2:\n      Otherwise:\n      Body:\n        SayStmt:\n          LiteralExpr: You cannot vote (STRING)\n\nSemantic analysis successful!\nSymbol Table:\nScope 0:\n  Variable: age (Type: INTEGER, Line: 3)\n\nInterpreting program...\n________________________________________\nYou can vote\n________________________________________\nInterpretation successful!\n",
+      "rawStderr": ""
+    },
+    {
+      "id": "match",
+      "title": "Pattern Matching",
+      "category": "Control flow",
+      "description": "match / case dispatches on a value, inside a reusable function.",
+      "highlight": "The subject is evaluated once; each case body opens its own scope.",
+      "expectFailure": false,
+      "source": "# Pattern matching in NovaScript.\n# `match` evaluates its subject once, then runs the body of the first\n# case whose pattern is equal to it. Each case body gets its own scope.\n\nlet day be 3\n\nmatch day\n    case 1 then\n        say \"Monday\"\n    case 2 then\n        say \"Tuesday\"\n    case 3 then\n        say \"Wednesday\"\n    case 4 then\n        say \"Thursday\"\n    case 5 then\n        say \"Friday\"\nend",
+      "tokens": [
+        {
+          "lexeme": "let",
+          "type": "LET",
+          "line": 5
+        },
+        {
+          "lexeme": "day",
+          "type": "IDENTIFIER",
+          "line": 5
+        },
+        {
+          "lexeme": "be",
+          "type": "BE",
+          "line": 5
+        },
+        {
+          "lexeme": "3",
+          "type": "NUMBER",
+          "line": 5
+        },
+        {
+          "lexeme": "match",
+          "type": "MATCH",
+          "line": 7
+        },
+        {
+          "lexeme": "day",
+          "type": "IDENTIFIER",
+          "line": 7
+        },
+        {
+          "lexeme": "<indent>",
+          "type": "INDENT",
+          "line": 8
+        },
+        {
+          "lexeme": "case",
+          "type": "CASE",
+          "line": 8
+        },
+        {
+          "lexeme": "1",
+          "type": "NUMBER",
+          "line": 8
+        },
+        {
+          "lexeme": "then",
+          "type": "THEN",
+          "line": 8
+        },
+        {
+          "lexeme": "<indent>",
+          "type": "INDENT",
+          "line": 9
+        },
+        {
+          "lexeme": "say",
+          "type": "SAY",
+          "line": 9
+        },
+        {
+          "lexeme": "Monday",
+          "type": "STRING",
+          "line": 9
+        },
+        {
+          "lexeme": "<dedent>",
+          "type": "DEDENT",
+          "line": 10
+        },
+        {
+          "lexeme": "case",
+          "type": "CASE",
+          "line": 10
+        },
+        {
+          "lexeme": "2",
+          "type": "NUMBER",
+          "line": 10
+        },
+        {
+          "lexeme": "then",
+          "type": "THEN",
+          "line": 10
+        },
+        {
+          "lexeme": "<indent>",
+          "type": "INDENT",
+          "line": 11
+        },
+        {
+          "lexeme": "say",
+          "type": "SAY",
+          "line": 11
+        },
+        {
+          "lexeme": "Tuesday",
+          "type": "STRING",
+          "line": 11
+        },
+        {
+          "lexeme": "<dedent>",
+          "type": "DEDENT",
+          "line": 12
+        },
+        {
+          "lexeme": "case",
+          "type": "CASE",
+          "line": 12
+        },
+        {
+          "lexeme": "3",
+          "type": "NUMBER",
+          "line": 12
+        },
+        {
+          "lexeme": "then",
+          "type": "THEN",
+          "line": 12
+        },
+        {
+          "lexeme": "<indent>",
+          "type": "INDENT",
+          "line": 13
+        },
+        {
+          "lexeme": "say",
+          "type": "SAY",
+          "line": 13
+        },
+        {
+          "lexeme": "Wednesday",
+          "type": "STRING",
+          "line": 13
+        },
+        {
+          "lexeme": "<dedent>",
+          "type": "DEDENT",
+          "line": 14
+        },
+        {
+          "lexeme": "case",
+          "type": "CASE",
+          "line": 14
+        },
+        {
+          "lexeme": "4",
+          "type": "NUMBER",
+          "line": 14
+        },
+        {
+          "lexeme": "then",
+          "type": "THEN",
+          "line": 14
+        },
+        {
+          "lexeme": "<indent>",
+          "type": "INDENT",
+          "line": 15
+        },
+        {
+          "lexeme": "say",
+          "type": "SAY",
+          "line": 15
+        },
+        {
+          "lexeme": "Thursday",
+          "type": "STRING",
+          "line": 15
+        },
+        {
+          "lexeme": "<dedent>",
+          "type": "DEDENT",
+          "line": 16
+        },
+        {
+          "lexeme": "case",
+          "type": "CASE",
+          "line": 16
+        },
+        {
+          "lexeme": "5",
+          "type": "NUMBER",
+          "line": 16
+        },
+        {
+          "lexeme": "then",
+          "type": "THEN",
+          "line": 16
+        },
+        {
+          "lexeme": "<indent>",
+          "type": "INDENT",
+          "line": 17
+        },
+        {
+          "lexeme": "say",
+          "type": "SAY",
+          "line": 17
+        },
+        {
+          "lexeme": "Friday",
+          "type": "STRING",
+          "line": 17
+        },
+        {
+          "lexeme": "<dedent>",
+          "type": "DEDENT",
+          "line": 18
+        },
+        {
+          "lexeme": "<dedent>",
+          "type": "DEDENT",
+          "line": 18
+        },
+        {
+          "lexeme": "end",
+          "type": "END",
+          "line": 18
+        },
+        {
+          "lexeme": "''",
+          "type": "END_OF_FILE",
+          "line": 18
+        }
+      ],
+      "tokenCount": 45,
+      "statementCount": 2,
+      "ast": "Program with 2 statements:\n  VarDeclStmt: day (Type: INTEGER)\n    Init:\n      LiteralExpr: 3 (NUMBER)\n  MatchStmt:\n    Condition:\n      VariableExpr: day\n    Case 1:\n      Pattern:\n        LiteralExpr: 1 (NUMBER)\n      Body:\n        SayStmt:\n          LiteralExpr: Monday (STRING)\n    Case 2:\n      Pattern:\n        LiteralExpr: 2 (NUMBER)\n      Body:\n        SayStmt:\n          LiteralExpr: Tuesday (STRING)\n    Case 3:\n      Pattern:\n        LiteralExpr: 3 (NUMBER)\n      Body:\n        SayStmt:\n          LiteralExpr: Wednesday (STRING)\n    Case 4:\n      Pattern:\n        LiteralExpr: 4 (NUMBER)\n      Body:\n        SayStmt:\n          LiteralExpr: Thursday (STRING)\n    Case 5:\n      Pattern:\n        LiteralExpr: 5 (NUMBER)\n      Body:\n        SayStmt:\n          LiteralExpr: Friday (STRING)",
+      "symbolTable": [
+        {
+          "depth": 0,
+          "symbols": [
+            {
+              "name": "day",
+              "type": "INTEGER",
+              "parameters": null,
+              "returnType": null,
+              "line": 5
+            }
+          ]
+        }
+      ],
+      "output": "Wednesday",
+      "error": null,
+      "errorStage": null,
+      "succeeded": true,
+      "stages": [
+        {
+          "id": "lex",
+          "name": "Lexer",
+          "status": "ok",
+          "detail": "45 tokens"
+        },
+        {
+          "id": "parse",
+          "name": "Parser",
+          "status": "ok",
+          "detail": "2 statements"
+        },
+        {
+          "id": "semantic",
+          "name": "Semantic",
+          "status": "ok",
+          "detail": "1 symbols"
+        },
+        {
+          "id": "run",
+          "name": "Interpreter",
+          "status": "ok",
+          "detail": "1 lines out"
+        }
+      ],
+      "rawStdout": "Tokens (45 total):\nToken: let                  (LET) at line 5\nToken: day                  (IDENTIFIER) at line 5\nToken: be                   (BE) at line 5\nToken: 3                    (NUMBER) at line 5\nToken: match                (MATCH) at line 7\nToken: day                  (IDENTIFIER) at line 7\nToken: <indent>             (INDENT) at line 8\nToken: case                 (CASE) at line 8\nToken: 1                    (NUMBER) at line 8\nToken: then                 (THEN) at line 8\nToken: <indent>             (INDENT) at line 9\nToken: say                  (SAY) at line 9\nToken: Monday               (STRING) at line 9\nToken: <dedent>             (DEDENT) at line 10\nToken: case                 (CASE) at line 10\nToken: 2                    (NUMBER) at line 10\nToken: then                 (THEN) at line 10\nToken: <indent>             (INDENT) at line 11\nToken: say                  (SAY) at line 11\nToken: Tuesday              (STRING) at line 11\nToken: <dedent>             (DEDENT) at line 12\nToken: case                 (CASE) at line 12\nToken: 3                    (NUMBER) at line 12\nToken: then                 (THEN) at line 12\nToken: <indent>             (INDENT) at line 13\nToken: say                  (SAY) at line 13\nToken: Wednesday            (STRING) at line 13\nToken: <dedent>             (DEDENT) at line 14\nToken: case                 (CASE) at line 14\nToken: 4                    (NUMBER) at line 14\nToken: then                 (THEN) at line 14\nToken: <indent>             (INDENT) at line 15\nToken: say                  (SAY) at line 15\nToken: Thursday             (STRING) at line 15\nToken: <dedent>             (DEDENT) at line 16\nToken: case                 (CASE) at line 16\nToken: 5                    (NUMBER) at line 16\nToken: then                 (THEN) at line 16\nToken: <indent>             (INDENT) at line 17\nToken: say                  (SAY) at line 17\nToken: Friday               (STRING) at line 17\nToken: <dedent>             (DEDENT) at line 18\nToken: <dedent>             (DEDENT) at line 18\nToken: end                  (END) at line 18\nToken: ''                   (END_OF_FILE) at line 18\n\nParsing successful!\nParsed 45 tokens into 2 statements.\n\nAbstract Syntax Tree (AST):\nProgram with 2 statements:\n  VarDeclStmt: day (Type: INTEGER)\n    Init:\n      LiteralExpr: 3 (NUMBER)\n  MatchStmt:\n    Condition:\n      VariableExpr: day\n    Case 1:\n      Pattern:\n        LiteralExpr: 1 (NUMBER)\n      Body:\n        SayStmt:\n          LiteralExpr: Monday (STRING)\n    Case 2:\n      Pattern:\n        LiteralExpr: 2 (NUMBER)\n      Body:\n        SayStmt:\n          LiteralExpr: Tuesday (STRING)\n    Case 3:\n      Pattern:\n        LiteralExpr: 3 (NUMBER)\n      Body:\n        SayStmt:\n          LiteralExpr: Wednesday (STRING)\n    Case 4:\n      Pattern:\n        LiteralExpr: 4 (NUMBER)\n      Body:\n        SayStmt:\n          LiteralExpr: Thursday (STRING)\n    Case 5:\n      Pattern:\n        LiteralExpr: 5 (NUMBER)\n      Body:\n        SayStmt:\n          LiteralExpr: Friday (STRING)\n\nSemantic analysis successful!\nSymbol Table:\nScope 0:\n  Variable: day (Type: INTEGER, Line: 5)\n\nInterpreting program...\n________________________________________\nWednesday\n________________________________________\nInterpretation successful!\n",
       "rawStderr": ""
     },
     {

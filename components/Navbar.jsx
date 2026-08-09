@@ -3,18 +3,22 @@
 import { useState } from "react"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
-import { Menu, X, Code2 } from "lucide-react"
+import { Menu, X, Code2, Sparkles } from "lucide-react"
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
   const pathname = usePathname()
 
+  // `highlight` marks the one page that is not documentation — the live
+  // interpreter. It gets its own colour so it does not read as another
+  // nav item.
   const navItems = [
     { name: "Home", href: "/" },
     { name: "About", href: "/about" },
     { name: "Docs", href: "/docs" },
     { name: "Phases", href: "/phases" },
     { name: "Examples", href: "/examples" },
+    { name: "Playground", href: "/playground", highlight: true },
     { name: "Notes", href: "/notes" },
     { name: "Team", href: "/team" },
   ]
@@ -33,18 +37,33 @@ export default function Navbar() {
           </Link>
 
           {/* Desktop Menu */}
-          <div className="hidden md:flex space-x-8">
-            {navItems.map((item) => (
-              <Link
-                key={item.name}
-                href={item.href}
-                className={`px-3 py-2 text-sm font-medium transition-colors hover:text-blue-400 ${
-                  pathname === item.href ? "text-blue-400" : "text-gray-300"
-                }`}
-              >
-                {item.name}
-              </Link>
-            ))}
+          <div className="hidden md:flex items-center space-x-6">
+            {navItems.map((item) =>
+              item.highlight ? (
+                <Link
+                  key={item.name}
+                  href={item.href}
+                  className={`flex items-center gap-1.5 rounded-md border px-3 py-1.5 text-sm font-semibold transition-all ${
+                    pathname === item.href
+                      ? "border-amber-400/70 bg-amber-400/20 text-amber-200 shadow-[0_0_14px_-2px_rgba(251,191,36,0.45)]"
+                      : "border-amber-500/40 bg-amber-500/10 text-amber-300 hover:border-amber-400/70 hover:bg-amber-400/20 hover:text-amber-200 hover:shadow-[0_0_14px_-2px_rgba(251,191,36,0.45)]"
+                  }`}
+                >
+                  <Sparkles className="h-3.5 w-3.5" />
+                  {item.name}
+                </Link>
+              ) : (
+                <Link
+                  key={item.name}
+                  href={item.href}
+                  className={`px-2 py-2 text-sm font-medium transition-colors hover:text-blue-400 ${
+                    pathname === item.href ? "text-blue-400" : "text-gray-300"
+                  }`}
+                >
+                  {item.name}
+                </Link>
+              ),
+            )}
           </div>
 
           {/* Mobile Menu Button */}
@@ -65,10 +84,15 @@ export default function Navbar() {
                   key={item.name}
                   href={item.href}
                   onClick={() => setIsOpen(false)}
-                  className={`px-3 py-2 text-base font-medium transition-colors hover:text-blue-400 ${
-                    pathname === item.href ? "text-blue-400" : "text-gray-300"
-                  }`}
+                  className={
+                    item.highlight
+                      ? "flex items-center gap-2 rounded-md border border-amber-500/40 bg-amber-500/10 px-3 py-2 text-base font-semibold text-amber-300 transition-colors hover:bg-amber-400/20 hover:text-amber-200"
+                      : `px-3 py-2 text-base font-medium transition-colors hover:text-blue-400 ${
+                          pathname === item.href ? "text-blue-400" : "text-gray-300"
+                        }`
+                  }
                 >
+                  {item.highlight && <Sparkles className="h-4 w-4" />}
                   {item.name}
                 </Link>
               ))}
